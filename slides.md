@@ -8,34 +8,47 @@ class: lead
 ---
 
 <!--
-Custom Marp Theme
-Save this theme inside the same file or extract into a separate CSS in /themes
+Custom Marp Theme (kept inline for simplicity).
+You can extract this into `themes/custom-theme.css` if you prefer.
 -->
 <style>
+/* Base */
 section {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: var(--color-background, #fafafa);
+  color: var(--color-foreground, #111);
 }
 
+/* Headings */
 h1, h2, h3 {
   color: #1a237e;
+  margin-bottom: 0.35em;
 }
 
+/* Footer area (we also use paginate: true so Marp will show page numbers) */
 footer {
   color: #555;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-align: right;
-  padding: 10px;
+  padding: 8px 12px;
 }
 
-section strong {
-  color: #004d40;
-}
+/* Highlight */
+section strong { color: #004d40; }
 
-/* Custom theme override */
+/* Custom theme variables */
 :root {
-  --color-background: #fafafa;
+  --color-background: #ffffff;
   --color-foreground: #111;
   --color-highlight: #1a237e;
+}
+
+/* Make the contact email visually prominent on the dedicated slide */
+.email-visible {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-highlight);
+  margin-top: 1.2rem;
 }
 </style>
 
@@ -44,18 +57,18 @@ section strong {
 ### Using Marp for Maintainable, Version-Controlled Presentations  
 **Contact:** 22f2001391@ds.study.iitm.ac.in
 
-<footer>Slide 1</footer>
+<footer>1</footer>
 
 ---
 
 # Why Marp?
 
 - Markdown-based presentations  
-- Works with GitHub, VSCode, CI/CD  
+- Works well with GitHub and CI/CD  
 - Export to **PDF**, **HTML**, **PPTX**  
 - Easy theming and automation
 
-<footer>Slide 2</footer>
+<footer>2</footer>
 
 ---
 
@@ -66,10 +79,10 @@ section strong {
 
 - Author content in Markdown  
 - Version control with Git  
-- Auto-render using Marp CLI  
+- Auto-render using Marp CLI or GitHub Actions  
 - Embed code, images, diagrams
 
-<footer>Slide 3</footer>
+<footer>3</footer>
 
 ---
 
@@ -77,29 +90,29 @@ section strong {
 
 This slide uses:
 
-- Custom CSS theme  
-- Marp directives (`marp: true`, `paginate: true`, `theme:`)  
+- Custom CSS theme (inline here)  
+- Marp directives (`marp: true`, `paginate: true`, `theme: custom-theme`)  
 - Styled text such as **bold**, *italics*, and `monospace`
 
-<footer>Slide 4</footer>
+<footer>4</footer>
 
 ---
 
 # Mathematical Example
 
-Algorithmic complexity for merge sort:
+Algorithmic recurrence for Merge Sort:
 
 \[
 T(n) = 2T\left(\frac{n}{2}\right) + n
 \]
 
-Time complexity:
+Therefore, time complexity:
 
 \[
-O(n \log n)
+T(n) = O(n \log n)
 \]
 
-<footer>Slide 5</footer>
+<footer>5</footer>
 
 ---
 
@@ -108,4 +121,6 @@ O(n \log n)
 For documentation support:  
 📧 **22f2001391@ds.study.iitm.ac.in**
 
-<footer>Slide 6</footer>
+<div class="email-visible">22f2001391@ds.study.iitm.ac.in</div>
+
+<footer>6</footer>
